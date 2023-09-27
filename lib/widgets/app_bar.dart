@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 AppBar appBar() {
   return AppBar(
-    title: const Text('Breakfast TUTORIAL',
+    title: const Text('Fitness TUTORIAL',
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
