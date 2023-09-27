@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _getDiets() {
-    categories = DietModel.getDiets();
+    diets = DietModel.getDiets();
   }
 
   @override
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
           SearchField(),
           const SizedBox(height: 40),
           CategoriesSection(categories: categories),
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           DietsSection(diets: diets),
         ],
       ),

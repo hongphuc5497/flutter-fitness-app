@@ -1,38 +1,48 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
-class CategoryModel {
+class DietModel {
   String name;
   String iconPath;
   Color boxColor;
+  String level;
+  String duration;
+  String calories;
+  bool viewIsSelected;
 
-  CategoryModel(
-      {required this.name, required this.iconPath, required this.boxColor});
+  DietModel(
+      {required this.name,
+      required this.iconPath,
+      required this.boxColor,
+      required this.level,
+      required this.duration,
+      required this.calories,
+      required this.viewIsSelected});
 
-  static List<CategoryModel> getCategories() {
-    List<CategoryModel> categories = [];
+  static List<DietModel> getDiets() {
+    List<DietModel> diets = [];
 
-    categories.addAll([
-      CategoryModel(
+    diets.addAll([
+      DietModel(
         name: 'Salad',
-        iconPath: 'assets/icons/plate.svg',
+        iconPath: 'assets/icons/honey-pancakes.svg',
         boxColor: const Color(0xff92A3FD),
+        level: 'Easy',
+        duration: '30mins',
+        calories: '180kcal',
+        viewIsSelected: false,
       ),
-      CategoryModel(
+      DietModel(
         name: 'Cake',
-        iconPath: 'assets/icons/pancakes.svg',
+        iconPath: 'assets/icons/canai-bread.svg',
         boxColor: const Color(0xffC58BF2),
-      ),
-      CategoryModel(
-        name: 'Pie',
-        iconPath: 'assets/icons/pie.svg',
-        boxColor: const Color(0xff92A3FD),
-      ),
-      CategoryModel(
-        name: 'Smoothies',
-        iconPath: 'assets/icons/orange-snacks.svg',
-        boxColor: const Color(0xffC58BF2),
+        level: 'Medium',
+        duration: '20mins',
+        calories: '240kcal',
+        viewIsSelected: true,
       ),
     ]);
-    return categories;
+    return diets;
   }
 }

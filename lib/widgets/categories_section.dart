@@ -1,10 +1,12 @@
-import 'package:fitness/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:fitness/models/category_model.dart';
+
 class CategoriesSection extends StatelessWidget {
   final List<CategoryModel> categories;
-  const CategoriesSection({Key? key, required this.categories}) : super(key: key);
+  const CategoriesSection({Key? key, required this.categories})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +26,6 @@ class CategoriesSection extends StatelessWidget {
       SizedBox(
           height: 120,
           child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(
-              left: 20,
-              right: 20,
-            ),
-            separatorBuilder: (context, index) => const SizedBox(width: 25),
-            itemCount: categories.length,
             itemBuilder: (context, index) {
               return Container(
                 width: 100,
@@ -54,7 +49,7 @@ class CategoriesSection extends StatelessWidget {
                         ),
                       ),
                       Text(categories[index].name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                             color: Colors.black,
@@ -62,6 +57,13 @@ class CategoriesSection extends StatelessWidget {
                     ]),
               );
             },
+            separatorBuilder: (context, index) => const SizedBox(width: 25),
+            itemCount: categories.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(
+              left: 20,
+              right: 20,
+            ),
           ))
     ]);
   }
